@@ -1,0 +1,18 @@
+<%= form_for :calculator, url: { action: :new }, method: :get do |f| %>
+ 
+  <p>
+    <p>
+	  <strong>Enter the value:</strong>
+	</p>
+    <%= f.text_field :value %>
+  </p>
+
+  <p>
+    <%= f.submit 'Calculate'%>
+  </p>
+ 
+<% end %>
+
+<% unless @result.nil? && @variable_name.nil? %>
+  <p> ===> <%= @variable_name %> =  <%= @result %></p>
+<% end %>
